@@ -57,6 +57,16 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "M4_#{Rails.env}"
   config.action_mailer.perform_caching = false
 
+  config.paperclip_defaults = {
+ :storage => :s3,
+ :s3_region => "us-east-1",
+ :s3_credentials => {
+ :bucket => ENV['BUCKET'],
+ :access_key_id => ENV['ACCESS_KEY_ID'],
+ :secret_access_key => ENV['SECRET_ACCESS_KEY']
+ }
+}
+
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
@@ -83,4 +93,6 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+    
 end

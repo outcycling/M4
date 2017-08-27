@@ -22,7 +22,10 @@ gem 'coffee-rails', '~> 4.2'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'devise'
-gem 'paperclip', '~> 4.1'
+gem 'paperclip', '~> 5.0.0'
+gem 'tinymce-rails'
+gem 'aws-sdk'
+gem 'figaro'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
